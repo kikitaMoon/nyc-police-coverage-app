@@ -1,0 +1,18 @@
+{
+  "kind": "arcgis-nova-deployable-app",
+  "version": "0.1",
+  "generatedAt": "2026-10-27T14:51:46.313Z",
+  "title": "NYC Police Response Coverage Analysis",
+  "authMode": "oauth",
+  "entry": "index.html",
+  "sourceAppPath": "outputs/apps/2026-10-27T12-49-35-81e0ef5b-cced-4bf9-8517-58defd28a8be/index.html",
+  "files": {
+    "app": "app.json",
+    "map": "map.json",
+    "runtime": "app.js",
+    "auth": "standalone-auth.js"
+  },
+  "portalUrl": "https://www.arcgis.com",
+  "appId": "obS3r7Wknlsparkr",
+  "deploymentUrl": "https://kikitamoon.github.io/nyc-police-coverage-app/"
+}

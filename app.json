@@ -1,0 +1,142 @@
+{
+  "version": "0.3",
+  "kind": "app",
+  "generatedAt": "2026-10-27T12:49:35.850Z",
+  "item": {
+    "title": "NYC Police Response Coverage Analysis",
+    "subtitle": "Select a station to generate a 10-minute driving-time service area."
+  },
+  "map": {
+    "type": "webmap",
+    "path": "./map.json"
+  },
+  "app": {
+    "template": "nova-app",
+    "preset": "analysis",
+    "showHeader": true,
+    "theme": {
+      "mode": "light",
+      "accent": "default"
+    },
+    "layout": {
+      "right": {
+        "hidden": false,
+        "width": "360px",
+        "title": "Response Coverage",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "station-search",
+            "title": "Find a station"
+          },
+          {
+            "type": "customMount",
+            "id": "coverage-results",
+            "title": "10-minute service area"
+          }
+        ]
+      }
+    },
+    "widgets": [
+      {
+        "id": "layers",
+        "type": "layerList",
+        "slot": "top-right",
+        "title": "Layers",
+        "config": {}
+      },
+      {
+        "id": "home",
+        "type": "home",
+        "slot": "top-left",
+        "title": "Home",
+        "config": {}
+      },
+      {
+        "id": "scale",
+        "type": "scaleBar",
+        "slot": "bottom-left",
+        "title": "Scale",
+        "config": {}
+      },
+      {
+        "id": "default-legend",
+        "type": "legend",
+        "slot": "bottom-left",
+        "config": {}
+      },
+      {
+        "id": "default-basemap-gallery",
+        "type": "basemapGallery",
+        "slot": "top-right",
+        "config": {}
+      }
+    ],
+    "interactions": [],
+    "behaviors": [
+      {
+        "id": "station-service-area",
+        "label": "Station selection and 10-minute service area",
+        "bundlePath": "./runtime/behaviors/station-service-area-ca281c126406c4d5.js",
+        "sourceSha256": "ca281c126406c4d5c9130092d19da955e26e5c03ac86a031443ff5450fec8ad9",
+        "modulePaths": [
+          "esri/Graphic",
+          "esri/portal/Portal",
+          "esri/rest/networkService",
+          "esri/rest/serviceArea",
+          "esri/rest/support/FeatureSet",
+          "esri/rest/support/ServiceAreaParameters"
+        ],
+        "config": {
+          "layerId": "1a17dcfeab0-layer-2",
+          "nameField": "Precinct",
+          "addressField": "Address",
+          "detailFields": [
+            "Telephone",
+            "Type",
+            "Zip_Code"
+          ],
+          "minutes": 10,
+          "travelMode": "Driving Time",
+          "resultLayerId": "station-service-area-result"
+        },
+        "mounts": [
+          "station-search",
+          "coverage-results"
+        ],
+        "ownedLayerIds": [
+          "station-service-area-result"
+        ],
+        "interactions": [
+          {
+            "id": "station-click",
+            "trigger": {
+              "type": "feature-click",
+              "layerId": "1a17dcfeab0-layer-2"
+            },
+            "actionId": "select-station"
+          }
+        ],
+        "installedAt": "2026-10-27T14:43:01.489Z"
+      }
+    ]
+  },
+  "nova": {
+    "basename": "81e0ef5b-cced-4bf9-8517-58defd28a8be",
+    "presentationMode": "app",
+    "ownedGraphicsLayerIds": [],
+    "origin": {
+      "portalUrl": "https://www.arcgis.com",
+      "mapId": "output-4bd23d2f-5de1-4c0c-ab1c-4c45110496c9",
+      "mapName": "New Conversation",
+      "viewMode": "2d",
+      "capturedAt": "2026-10-27T12:49:35.849Z"
+    },
+    "sourceSelection": {
+      "mode": "all"
+    },
+    "unsupportedLayers": [],
+    "degradedFeatures": []
+  }
+}
